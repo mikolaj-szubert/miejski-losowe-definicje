@@ -9,6 +9,7 @@ namespace LosoweDefinicje
         public Main()
         {
             InitializeComponent();
+            Icon = Properties.Resources.dice;
             Properties.Ustawienia.Default.Reload();
             ChangeQuote();
         }
@@ -59,14 +60,12 @@ namespace LosoweDefinicje
                     HtmlNode? example = doc.DocumentNode.SelectSingleNode("//article/blockquote");
                     if (example != null)
                     {
-                        //descriptionLabel.Margin = new Padding(3, 3, 3, 3);
                         ExampleFlowLayoutPanel.Visible = true;
                         exampleLabel.Visible = true;
                         exampleLabel.Text = example.InnerText.Trim();
                     }
                     else
                     {
-                        //descriptionLabel.Margin = new Padding(3, 3, 3, 10);
                         exampleLabel.Visible = false;
                         ExampleFlowLayoutPanel.Visible = false;
                         exampleLabel.Text = string.Empty;
@@ -92,15 +91,21 @@ namespace LosoweDefinicje
             Ustawienia u = new();
             u.ShowDialog();
             Properties.Ustawienia.Default.Reload();
-            myTimer.Interval = (int)Properties.Ustawienia.Default.Interval * 1000;
-            myTimer.Start();
+            if ((int)Properties.Ustawienia.Default.Interval > 0)
+            {
+                myTimer.Interval = (int)Properties.Ustawienia.Default.Interval * 1000;
+                myTimer.Start();
+            }
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             myTimer.Tick += new EventHandler(ChangeQuote);
-            myTimer.Interval = (int)Properties.Ustawienia.Default.Interval * 1000;
-            myTimer.Start();
+            if ((int)Properties.Ustawienia.Default.Interval > 0)
+            {
+                myTimer.Interval = (int)Properties.Ustawienia.Default.Interval * 1000;
+                myTimer.Start();
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)

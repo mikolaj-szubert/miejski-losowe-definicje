@@ -7,6 +7,7 @@
         public Ustawienia()
         {
             InitializeComponent();
+            Icon = Properties.Resources.dice;
         }
 
         private void Ustawienia_MouseDown(object sender, MouseEventArgs e)
@@ -44,6 +45,7 @@
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             Properties.Ustawienia.Default.Interval = numericUpDown1.Value;
+            Close();
         }
 
         private void Ustawienia_Load(object sender, EventArgs e)
