@@ -3,7 +3,7 @@ Program mający za zadanie losowanie definicji pojęć ze strony [Miejski.pl](ht
 W ten sposób możesz w przystępny sposób uczyć się nowych słów podczas pracy na komputerze.
 
 ## Instrukcja instalacji
-1. Pobierz plik [setup.zip](https://github.com/mikolaj-szubert/miejski-losowe-definicje/releases/latest).
+1. Pobierz plik [setup.zip](https://github.com/mikolaj-szubert/miejski-losowe-definicje/releases/latest/download/setup.zip).
 2. Rozpakuj go.
 3. Klikając podówjnie na plik setup.exe uruchomisz instaler.
 4. Kliknij "Zainstaluj".
